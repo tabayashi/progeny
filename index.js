@@ -120,7 +120,7 @@ function progenyConstructor(mode, settings) {
         return match && match.length > 1;
       })
       .map(function (match) {
-        return match[1].trim();
+        return match.slice(1).map(matched => matched.trim()).join(''); // [update]
       })
       .concat(mdeps)
       .filter(function (path) {
