@@ -1,4 +1,4 @@
-'use strict';
+up'use strict';
 
 var sysPath = require('path');
 var fs = require('fs-mode');
@@ -120,7 +120,7 @@ function progenyConstructor(mode, settings) {
         return match && match.length > 1;
       })
       .map(function (match) {
-        return match.slice(1).map(matched => matched.trim()).join(''); // [update]
+        return match.slice(1).filter(matched => matched).map(matched => String(matched).trim()).join(''); // [update]
       })
       .concat(mdeps)
       .filter(function (path) {
